@@ -15,12 +15,12 @@ Version: GeneMark-ES Suite version 4.62_lic
 
 ## Filtering the *Haemoproteus tartakovskyi* genome
 ### Keeping the scaffolds that are longer than 3000 nucleotides
-For that filtering step, the filtering_scaffolds_3000.py script was run as:
+For that filtering step, the **filtering_scaffolds_3000.py** script was run as:
 ```shell
 python /path_to_script/filtering_scaffolds_3000.py /path_to_file/Haemoproteus_tartakovskyi.genome
 ```
 ### Filtering according to GC content
-For that filtering step 30% or below was choosen which is a blabla and for that the GC_content_malaria.py script was run as:
+For that filtering step 30% or below was choosen which is a blabla and for that the **GC_content_malaria.py** script was run as:
 ```shell
 python /path_to_script/GC_content_malaria.py /path_to_file/above_3000_filtered.genome
 ```
@@ -48,7 +48,7 @@ blastp -query gffParse.faa -db SwissProt -evalue 1e-10 -out Ht.blastp
 Version: blast 2.11.0, build Oct  6 2020 03:24:05
 The e-value cut off was set according to the previous gene annotation exercise. This cut off may cause some bird proteins to be undetected since hits that didn't meet the e-value filter arem't identified so they will "stay" in the genome file surviving filtering.
 
-After the blastp, the scaffolds that contained a bird protein hit were filtered out from the genome file using the script blastprocess.py:
+After the blastp, the scaffolds that contained a bird protein hit were filtered out from the genome file using the script **blastprocess.py**:
 ```shell
 python /path_to_script/blastprocess.py /path_to_file/file.blastp /path_to_file/SwissProt_dat_file /path_to_file/file.fna /path_to_file/file.genome /path_to_file/output.genome
 ```
@@ -71,7 +71,7 @@ Then, gffParse.pl was run as before on all genome files and their gtf files on t
 perl /path_to_program/gffParse.pl  -i ../path_to_file/file.genome -g /path_to_file/file.gtf -b shortname -c -p
 ```
 ## Answering question 3
-Python and bash scripts were written to answer this question. They were run as:
+Python scripts **q_3_genome.py, q_3_genes.py and q_3_gc.py** were written to answer this question. They were run as:
 ```shell
 for f in ../genome/*.genome; do python q_3_genome.py "$f"; echo "$f"; done > q_3_genome.txt
 
