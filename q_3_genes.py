@@ -17,9 +17,15 @@ bash run: for f in ../fasta_all/*.fna; do
 
 
 import sys
+# setting up counter
 genesum = 0
+# opening input file
 with open(sys.argv[1], 'r') as fin:
+    # iterating through
     for line in fin:
+        # catching the gene ids
         if line.startswith('>'):
+            # counting the gene ids
             genesum += 1
+    # printing the sum of genes into standard output
     print(genesum)
