@@ -97,3 +97,8 @@ conda update proteinortho
 
 proteinortho6.pl /path_to_files/{Ht,Pb,Pc,Pf,Pk,Pv,Py,Tg}.faa
 ```
+## Filling out group table
+Getting the number of Proteinortho IDs found in all eight genomes
+```shell
+cat myproject.proteinortho.tsv | grep "^8" | wc -l
+```
