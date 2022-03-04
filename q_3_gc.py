@@ -8,11 +8,6 @@ Description:
 This script was written to answer question 3/gc % by converting the multi line fasta into single line and then calculating the gc %.
 The gc % in the genome file will be printed on the standard output.
 
-bash run: for f in ../fasta_all/*.fna; do
-> python q_3_genes.py "$f"
-> echo "$f"
-> done > q_3_genes.txt
-
 
 '''
 
